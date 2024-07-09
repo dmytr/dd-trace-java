@@ -1,5 +1,9 @@
-def zioVersion = '2.0.0'
-def scalaVersion = '2.12'
+ext {
+  minJavaVersionForTests = JavaVersion.VERSION_11
+}
+
+def zioVersion = '2.1.0'
+def scalaVersion = '2.13'
 
 muzzle {
   pass {
@@ -37,5 +41,5 @@ dependencies {
   testImplementation libs.scala
   testImplementation group: 'dev.zio', name: "zio_$scalaVersion", version: zioVersion
 
-  latestDepTestImplementation group: 'dev.zio', name: "zio_$scalaVersion", version: '2.0.+'
+  latestDepTestImplementation group: 'dev.zio', name: "zio_$scalaVersion", version: '+'
 }
